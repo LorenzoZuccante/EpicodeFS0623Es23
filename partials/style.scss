@@ -1,0 +1,85 @@
+@import "colori";
+@import "animazioni";
+@import "bottoni";
+@import "font";
+@import "mixins";
+@import "spaziature";
+
+body {
+    font-family: $fontUtilizzato;
+    background: $coloreBgHero;
+    color: $coloreTesto;
+    font-size: $fSTesto;
+    
+}
+#logo {
+    @include dimensioniLogo();
+    
+}
+#clear {
+    clear: left;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    
+
+}
+ul li {
+    list-style: none;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+#hero {
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    font-size: $fSBig;
+    font-weight: 900;
+}
+button {
+    @include bottoni();
+    @include btn-zoom-out();
+}
+#btn1 {
+    background: $coloreBottone1;
+}
+#btn2 {
+    background: $coloreBottone2;  
+}
+#btn3 {
+    background: $coloreBottone3;
+}
+#img1 {
+    @include imgHero();
+}
+
+.img2 {
+    @include img2();
+}
+section {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 10px;
+    background: whitesmoke;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+.elemento1 {
+    @include fade-in-from-top(1s, 0.3s);
+}
+.elemento2 {
+    @include fade-in-from-bottom(1s, 0.3s);
+}
+a {
+    text-decoration: none;
+    color: $coloreTesto;
+}
